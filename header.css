@@ -9,6 +9,19 @@
     border: 8px outset lightskyblue;
 }
 
+.websitename{
+    margin: 4px 8px;
+    color:darkblue;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.description{
+    margin: 4px 8px;
+    color:rgb(50, 77, 104)
+}
+
 .logo{
+    margin: 4px 8px;
     background-color: lightsteelblue;
 }
