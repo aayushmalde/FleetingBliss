@@ -1,0 +1,14 @@
+.header{
+    background-color:lightblue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: flex-start;
+    width: 100%;
+    border: 8px outset lightskyblue;
+}
+
+.logo{
+    background-color: lightsteelblue;
+}
