@@ -1,12 +1,11 @@
 .header{
-    background-color:lightblue;
+    background-color: lightblue;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content:center;
-    width: 100%;
-    border: 4px outset lightskyblue;
+    align-items: center;
+    justify-content: center;
+    border: 8px outset lightskyblue;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
