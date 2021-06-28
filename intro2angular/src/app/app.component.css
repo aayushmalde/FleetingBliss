@@ -24,13 +24,11 @@
 .weather > .title{
     text-align: center;
     text-decoration: underline ;
-
-        background: url(background.jpeg) no-repeat center center fixed; 
 }
 
 */
 html { 
-
+    background: url(C:\Users\amsoc\OneDrive\Desktop\FleetingBliss\FleetingBliss\background.jpeg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
