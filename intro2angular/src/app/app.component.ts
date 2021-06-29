@@ -8,4 +8,5 @@ import { HelloComponent } from './hello/hello.component'
 })
 export class AppComponent {
   title = 'intro2angular';
+  text='app';
 }
