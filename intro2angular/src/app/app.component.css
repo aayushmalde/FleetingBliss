@@ -1,0 +1,9 @@
+tr.even{
+    background-color: black;
+    color: white;
+}
+
+tr.odd{
+    background-color: red;
+    color: white;
+}
