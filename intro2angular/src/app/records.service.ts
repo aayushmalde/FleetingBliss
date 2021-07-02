@@ -9,24 +9,27 @@ interface myData{
 @Injectable()
 export class RecordsService {
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   getData() {
-    //return this.http.get<myData>('http://localhost:1234/file.php')
-    return of([
+    return [
       {
-          "name": "test",
-          "online": true
+          name: "test",
+          online: true
       },
       {
-          "name": "ABC",
-          "online": false
+          name: "ABC",
+          online: false
       },
       {
-          "name": "123",
-          "online": true
+          name: "123",
+          online: true
+      },
+     {
+          name: "1234",
+          online: true
       }
-  ])
+    ]
   
   }
 }
