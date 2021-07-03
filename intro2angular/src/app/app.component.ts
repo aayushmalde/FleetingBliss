@@ -21,25 +21,8 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    //this.records = this.myFirstService.getData()
-    this.records = [
-      {
-          name: "test",
-          online: true
-      },
-      {
-          name: "ABC",
-          online: false
-      },
-      {
-          name: "123",
-          online: true
-      },
-     {
-          name: "1234",
-          online: true
-      }
-    ]
+    this.records = this.myFirstService.getData()
+    
   }
 
 }
