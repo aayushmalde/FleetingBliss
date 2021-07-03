@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { Observable, of } from 'rxjs';
+import { myRecord } from './app.component';
 
-interface myData{
-  obj: Object
+export interface myData{
+  obj: myRecord[]
 }
 
 @Injectable()
@@ -10,26 +12,27 @@ export class RecordsService {
 
   constructor(private http: HttpClient) { }
 
-  getData() {
-    return [
-      {
-          name: "test",
-          online: true
-      },
-      {
-          name: "ABC",
-          online: false
-      },
-      {
-          name: "123",
-          online: true
-      },
-     {
-          name: "1234",
-          online: true
-      }
+  getData(): Observable<myData> {
+    //  return this.http.get<myData>('http://localhost:1234/file.php')
+    return of({
+      "obj": [
+        {
+            "name": "test",
+            "online": true
+        },
+        {
+            "name": "ABC",
+            "online": false
+        },
+        {
+            "name": "123",
+            "online": true
+        }
     ]
-  
+    }
+      
+      
+    )
   }
 }
 
