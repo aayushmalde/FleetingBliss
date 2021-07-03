@@ -3,6 +3,7 @@ header('Access-Control-Allow-Origin: *');
 
 header('Content-Type: application/json');
 ?>
+{
     "obj": [
         {
             "name": "test",
@@ -17,3 +18,4 @@ header('Content-Type: application/json');
             "online": true
         }
     ]
+}
