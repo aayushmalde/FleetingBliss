@@ -14,21 +14,21 @@ export class RecordsService {
   constructor(private httpClient: HttpClient) { }
 
   getData(): Observable<myData> {
-    const dataArr = [
-        {
-            "name": "test",
-            "online": true
-        },
-        {
-            "name": "ABC",
-            "online": false
-        },
-        {
-            "name": "123",
-            "online": true
-        }
-    ]
-    // return of({obj: dataArr});  
+    // const dataArr = [
+    //     {
+    //         "name": "test",
+    //         "online": true
+    //     },
+    //     {
+    //         "name": "ABC",
+    //         "online": false
+    //     },
+    //     {
+    //         "name": "123",
+    //         "online": true
+    //     }
+    // ]
+    // // return of({obj: dataArr});  
     return this.httpClient.get<myData>('http://localhost:1234/file.php').pipe(
       retry(1),
       catchError(this.handleError)
@@ -49,8 +49,6 @@ export class RecordsService {
     window.alert(errorMessage);
     return throwError(errorMessage);
  }
-      //test2
-      //test
     
 }
 
