@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HelloComponent } from './hello/hello.component'
 import {RecordsService} from './records.service'
 
 export interface myRecord{name: string, online: boolean}

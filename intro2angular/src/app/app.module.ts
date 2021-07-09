@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello/hello.component';
 import { RecordsService } from './records.service';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { NavigationComponent } from './navigation/navigation.component';
+import { HeaderComponent } from './header/header.component';
+import { MainpageComponent } from './mainpage/mainpage.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloComponent
+    NavigationComponent,
+    HeaderComponent,
+    MainpageComponent
   ],
   imports: [
     BrowserModule,
