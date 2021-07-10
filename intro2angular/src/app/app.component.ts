@@ -12,6 +12,7 @@ export interface myRecord{name: string, online: boolean}
 export class AppComponent {
   title = 'intro2angular';
   text='app';
+  countryName = 'Portugal';
 
   records: myRecord[] = [];
   constructor(private myFirstService: RecordsService){
