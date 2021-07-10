@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CountryValuesService } from '../country-values.service';
 
 @Component({
   selector: 'app-mainpage',
@@ -6,20 +7,18 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./mainpage.component.css']
 })
 export class MainpageComponent implements OnInit {
-  @Input() country: string = '';
+   country: string = '';
 
-  constructor() { 
-    // this.country="spain";
+  constructor(private mySecondService: CountryValuesService) { 
   }
 
-  ngOnInit(): void {
-    console.log('*** country is ', this.country);  
 
-        this.country="spain";
-
-    console.log('*** country is ', this.country);  
-
+  ngOnInit(){
+    this.mySecondService.getCountryValueObs().subscribe(countryName => {
+      this.country = countryName;
+      console.log(countryName);
+    })
+    
   }
-
 
 }

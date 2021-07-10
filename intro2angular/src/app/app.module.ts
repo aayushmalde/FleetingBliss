@@ -7,14 +7,17 @@ import { RecordsService } from './records.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HeaderComponent } from './header/header.component';
-import { MainpageComponent } from './mainpage/mainpage.component'
+import { MainpageComponent } from './mainpage/mainpage.component';
+import { HeadercountryComponent } from './headercountry/headercountry.component'
+import { CountryValuesService } from './country-values.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     HeaderComponent,
-    MainpageComponent
+    MainpageComponent,
+    HeadercountryComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { MainpageComponent } from './mainpage/mainpage.component'
     FormsModule,
     HttpClientModule
   ],
-  providers: [RecordsService],
+  providers: [RecordsService, CountryValuesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
