@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSelectChange } from '@angular/material/select';
 import { CountryValuesService } from '../country-values.service';
 @Component({
   selector: 'app-navigation',
@@ -7,8 +8,6 @@ import { CountryValuesService } from '../country-values.service';
       <div class="dropdown">
         <button class="dropbtn">Popular in Europe</button>
         <div class="dropdown-content">
-          <button (click)="setCountry('Spain')">Spain</button>
-          <button (click)="setCountry('England')">England</button>
           <a href="#">France</a>
           <a href="#">Italy</a>
           <a href="#">Germany</a>
@@ -87,19 +86,9 @@ import { CountryValuesService } from '../country-values.service';
         </div>
       </div>
 
-      <mat-label>Choose a country</mat-label>
-      <select (change)="setCountry($event)">
-        <option value="Monday">Monday</option>
-        <option value="Tuesday">Tuesday</option>
-        <option value="Wednesday">Wednesday</option>
-        <option value="Thursday">Thursday</option>
-        <option value="Friday">Friday</option>
-      </select>
-
-      <h4>Basic mat-select</h4>
       <mat-form-field>
         <mat-label>Choose a country</mat-label>
-        <mat-select (selecionChange)="setCountry($event)">
+        <mat-select (selectionChange)="setCountry($event)">
           <mat-option value="spain">Spain</mat-option>
           <mat-option value="england">England</mat-option>
           <mat-option value="france">France</mat-option>
@@ -114,33 +103,10 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  setCountry(event: any) {
-    this.countryNameService.countryValue = event.target.value;
+  setCountry(event: MatSelectChange) {
+    this.countryNameService.countryValue = event.value;
+    console.log(event.value);
   }
   selectedCountry = 'Spain';
   countries = ['Spain', 'England', 'France'];
 }
-
-// {{ selectedCountry }}
-// <h4>Basic mat-select</h4>
-// <mat-form-field>
-//   <mat-label>Choose a country</mat-label>
-//   <mat-select [(ngModel)]="selectedCountry">
-//     <mat-option (change)="onChangeSpain()">Spain</mat-option>
-//     <mat-option (change)="onChangeEngland()">England</mat-option>
-//     <mat-option (change)="onChangeFrance()">France</mat-option>
-//     <mat-option (change)="setCountry('Germany')">Germany</mat-option>
-//   </mat-select>
-// </mat-form-field>
-
-// <mat-label>Choose a country</mat-label>
-//       <select (change)="selectChangeHandler($event)">
-//         <option value="Monday">Monday</option>
-//         <option value="Tuesday">Tuesday</option>
-//         <option value="Wednesday">Wednesday</option>
-//         <option value="Thursday">Thursday</option>
-//         <option value="Friday">Friday</option>
-//       </select>
-//       <p>
-//         <span>You selected: </span><b>{{ selectedDay }}</b>
-//       </p>
