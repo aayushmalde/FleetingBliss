@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -14,6 +14,7 @@ import { HeadercountryComponent } from './headercountry/headercountry.component'
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RecordsService } from './records.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +32,18 @@ import { RecordsService } from './records.service';
     MatInputModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
   ],
   exports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
   ],
   providers: [RecordsService, CountryValuesService],
   bootstrap: [AppComponent],

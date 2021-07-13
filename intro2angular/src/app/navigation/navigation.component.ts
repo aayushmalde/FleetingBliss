@@ -90,7 +90,7 @@ import { CountryValuesService } from '../country-values.service';
         <h4>Basic mat-select</h4>
         <mat-form-field>
           <mat-label>Choose a country</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="selectedCountry">
             <mat-option>Spain</mat-option>
             <mat-option>England</mat-option>
             <mat-option>France</mat-option>
