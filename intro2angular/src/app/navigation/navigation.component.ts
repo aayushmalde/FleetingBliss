@@ -95,6 +95,16 @@ import { CountryValuesService } from '../country-values.service';
         <option value="Thursday">Thursday</option>
         <option value="Friday">Friday</option>
       </select>
+
+      <h4>Basic mat-select</h4>
+      <mat-form-field>
+        <mat-label>Choose a country</mat-label>
+        <mat-select (selecionChange)="setCountry($event)">
+          <mat-option value="spain">Spain</mat-option>
+          <mat-option value="england">England</mat-option>
+          <mat-option value="france">France</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   `,
   styleUrls: ['./navigation.component.css'],
