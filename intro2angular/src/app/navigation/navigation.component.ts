@@ -86,17 +86,15 @@ import { CountryValuesService } from '../country-values.service';
           <a href="#">Prague, Czech Republic</a>
         </div>
       </div>
-      <div class="sel">
-        <h4>Basic mat-select</h4>
-        <mat-form-field>
-          <mat-label>Choose a country</mat-label>
-          <mat-select [(ngModel)]="selectedCountry">
-            <mat-option>Spain</mat-option>
-            <mat-option>England</mat-option>
-            <mat-option>France</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+
+      <mat-label>Choose a country</mat-label>
+      <select (change)="setCountry($event)">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+      </select>
     </div>
   `,
   styleUrls: ['./navigation.component.css'],
@@ -106,9 +104,33 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  setCountry(countryName: string) {
-    this.countryNameService.countryValue = countryName;
+  setCountry(event: any) {
+    this.countryNameService.countryValue = event.target.value;
   }
   selectedCountry = 'Spain';
   countries = ['Spain', 'England', 'France'];
 }
+
+// {{ selectedCountry }}
+// <h4>Basic mat-select</h4>
+// <mat-form-field>
+//   <mat-label>Choose a country</mat-label>
+//   <mat-select [(ngModel)]="selectedCountry">
+//     <mat-option (change)="onChangeSpain()">Spain</mat-option>
+//     <mat-option (change)="onChangeEngland()">England</mat-option>
+//     <mat-option (change)="onChangeFrance()">France</mat-option>
+//     <mat-option (change)="setCountry('Germany')">Germany</mat-option>
+//   </mat-select>
+// </mat-form-field>
+
+// <mat-label>Choose a country</mat-label>
+//       <select (change)="selectChangeHandler($event)">
+//         <option value="Monday">Monday</option>
+//         <option value="Tuesday">Tuesday</option>
+//         <option value="Wednesday">Wednesday</option>
+//         <option value="Thursday">Thursday</option>
+//         <option value="Friday">Friday</option>
+//       </select>
+//       <p>
+//         <span>You selected: </span><b>{{ selectedDay }}</b>
+//       </p>
