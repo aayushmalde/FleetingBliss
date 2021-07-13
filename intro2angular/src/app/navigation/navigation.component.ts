@@ -1,11 +1,10 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountryValuesService } from '../country-values.service';
-
 @Component({
   selector: 'app-navigation',
-    template: `
+  template: `
     <div class="navigationbar">
-    <div class="dropdown">
+      <div class="dropdown">
         <button class="dropbtn">Popular in Europe</button>
         <div class="dropdown-content">
           <button (click)="setCountry('Spain')">Spain</button>
@@ -87,20 +86,29 @@ import { CountryValuesService } from '../country-values.service';
           <a href="#">Prague, Czech Republic</a>
         </div>
       </div>
-      
-</div>
-    `,
-  styleUrls: ['./navigation.component.css']
+      <div class="sel">
+        <h4>Basic mat-select</h4>
+        <mat-form-field>
+          <mat-label>Choose a country</mat-label>
+          <mat-select>
+            <mat-option>Spain</mat-option>
+            <mat-option>England</mat-option>
+            <mat-option>France</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  `,
+  styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent implements OnInit {
+  constructor(private countryNameService: CountryValuesService) {}
 
-  constructor(private mySecondService: CountryValuesService) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  setCountry(countryName: string) {
+    this.countryNameService.countryValue = countryName;
   }
-
-  setCountry(countryName: string){
-    this.mySecondService.countryValue=countryName;
-  }
-
+  selectedCountry = 'Spain';
+  countries = ['Spain', 'England', 'France'];
 }

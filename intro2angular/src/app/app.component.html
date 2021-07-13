@@ -1,41 +1,8 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    </head>
-    <body>
+<!--Header Component: Website Name, Description, Photo-->
+<app-header></app-header>
 
-    <!--Header Component: Website Name, Description, Photo-->
-    <app-header></app-header>
+<!--Navigation Bar Component-->
+<app-navigation></app-navigation>
 
-    <!--Navigation Bar Component-->
-    <app-navigation></app-navigation>
-    
-    <!--Main Page Component-->
-    <app-mainpage></app-mainpage>
-    
-    </body>
-    <!--Footer-->
-    <footer>
-        <p>Footer</p>
-        <p>Author: Aayush Malde</p>
-        <p>Email: malde.aayush@gmail.com</p>
-    </footer>
-
-    <table>
-    <tr>
-        <td>Index</td>
-        <td>Name</td>
-        <td>Is online?</td>
-    </tr>
-    <tr *ngFor="let record of records; let myIndex = index; let firstRecord = first; let lastRecord = last; let evenRecord = even; let oddRecord = odd;" [ngClass]="{odd: oddRecord, even: evenRecord, first:firstRecord, last:lastRecord}">
-        <td>{{myIndex+1}}</td>
-        <td>{{record.name}}</td>
-        <td>{{record.online}}</td>
-    </tr>
-</table>
-
-</html>
-
+<!--Main Page Component-->
+<app-mainpage></app-mainpage>

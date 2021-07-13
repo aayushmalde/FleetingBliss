@@ -1,8 +1,13 @@
-<div class="mainpage">
+<ng-container
+  *ngIf="{
+    countryName: countryName$ | async
+  } as observables"
+>
+  <div class="mainpage">
     <div class="spain">
-        <p>Spain</p>
-        <p>Currency: The Euro (€)</p>
-        {{country}}
-        
+      <p>Spain</p>
+      <p>Currency: The Euro (€)</p>
+      {{ observables.countryName }}
     </div>
-</div>
+  </div>
+</ng-container>

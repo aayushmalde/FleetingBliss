@@ -1,24 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CountryValuesService } from '../country-values.service';
 
 @Component({
   selector: 'app-mainpage',
   templateUrl: './mainpage.component.html',
-  styleUrls: ['./mainpage.component.css']
+  styleUrls: ['./mainpage.component.css'],
 })
 export class MainpageComponent implements OnInit {
-   country: string = '';
+  country: string = '';
+  countryName$: Observable<string> | undefined; // convention to use $ at end for observables
 
-  constructor(private mySecondService: CountryValuesService) { 
+  constructor(private countryNameService: CountryValuesService) {}
+
+  ngOnInit() {
+    this.countryName$ = this.countryNameService.getCountryValueObs();
   }
-
-
-  ngOnInit(){
-    this.mySecondService.getCountryValueObs().subscribe(countryName => {
-      this.country = countryName;
-      console.log(countryName);
-    })
-    
-  }
-
 }
