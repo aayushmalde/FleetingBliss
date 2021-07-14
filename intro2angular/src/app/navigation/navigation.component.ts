@@ -86,12 +86,14 @@ import { CountryValuesService } from '../country-values.service';
         </div>
       </div>
 
-      <mat-form-field>
-        <mat-label>Choose a country</mat-label>
-        <mat-select (selectionChange)="setCountry($event)">
-          <mat-option value="spain">Spain</mat-option>
-          <mat-option value="england">England</mat-option>
-          <mat-option value="france">France</mat-option>
+      <mat-form-field class="dropbtn">
+        <mat-label class="label">Popular in Europe</mat-label>
+        <mat-select class="select" (selectionChange)="setCountry($event)">
+          <mat-option class="dropdowncontent" value="spain">Spain</mat-option>
+          <mat-option class="dropdowncontent" value="england"
+            >England</mat-option
+          >
+          <mat-option class="dropdowncontent" value="france">France</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
