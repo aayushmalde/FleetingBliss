@@ -5,7 +5,8 @@
 >
   <div class="mainpage">
     <div class="spain">
-      {{ observables.countryName }}
+      Country name is {{ countryName }} Country value is
+      {{ getValue(countryName) }}
       <p>Currency: The Euro (€)</p>
       <!-- <div class="map"></div> -->
       <img [src]="displayedImage" width="100" height="100" />
