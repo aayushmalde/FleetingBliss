@@ -10,6 +10,7 @@ import { CountryValuesService } from '../country-values.service';
 export class MainpageComponent implements OnInit {
   country: string = '';
   countryName$: Observable<string> | undefined; // convention to use $ at end for observables
+  displayedImage = 'assets/images/horse.jpg';
 
   constructor(private countryNameService: CountryValuesService) {}
 
