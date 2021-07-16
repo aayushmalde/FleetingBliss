@@ -8,6 +8,10 @@ import { CountryValuesService } from '../country-values.service';
       <mat-form-field class="dropbtn">
         <mat-label class="label">Popular in Europe</mat-label>
         <mat-select class="select" (selectionChange)="setCountry($event)">
+          <mat-option class="dropdowncontent" value="Spain">Spain</mat-option>
+          <mat-option class="dropdowncontent" value="England"
+            >England</mat-option
+          >
           <mat-option class="dropdowncontent" value="France">France</mat-option>
           <mat-option class="dropdowncontent" value="Italy">Italy</mat-option>
           <mat-option class="dropdowncontent" value="Germany"
