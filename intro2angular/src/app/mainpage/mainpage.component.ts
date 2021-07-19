@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { CountryValuesService } from '../country-values.service';
-import { CountryInfo } from './countryInfoModel';
+import { CountryInfo } from './country-info-model';
 
 export interface lodgingInfo {
   name: string;
@@ -36,7 +36,11 @@ export class MainpageComponent implements OnInit {
   };
 
   //in future have Object called countries with values, so that way using the map in the html we can say map.get(countryName).currency
-  map: Map<string, CountryInfo> = new Map([['Spain', this.countryInfo]]);
+  countryMap: Map<string, CountryInfo> = new Map([
+    ['Spain', this.countryInfo],
+    ['England', this.countryInfo],
+    ['France', this.countryInfo],
+  ]);
 
   constructor(private countryNameService: CountryValuesService) {}
 
@@ -49,6 +53,6 @@ export class MainpageComponent implements OnInit {
   }
 
   getValue(countryName: string) {
-    return this.map.get(countryName)?.currency;
+    return this.countryMap.get(countryName)?.currency;
   }
 }

@@ -8,19 +8,12 @@ import { CountryValuesService } from '../country-values.service';
       <mat-form-field class="dropbtn">
         <mat-label class="label">Popular in Europe</mat-label>
         <mat-select class="select" (selectionChange)="setCountry($event)">
-          <mat-option class="dropdowncontent" value="Spain">Spain</mat-option>
-          <mat-option class="dropdowncontent" value="England"
-            >England</mat-option
+          <mat-option
+            class="dropdowncontent"
+            *ngFor="let country of countries"
+            [value]="country"
+            >{{ country }}</mat-option
           >
-          <mat-option class="dropdowncontent" value="France">France</mat-option>
-          <mat-option class="dropdowncontent" value="Italy">Italy</mat-option>
-          <mat-option class="dropdowncontent" value="Germany"
-            >Germany</mat-option
-          >
-          <mat-option class="dropdowncontent" value="Switzerland"
-            >Switzerland</mat-option
-          >
-          <mat-option class="dropdowncontent" value="Sweden">Sweden</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="dropbtn">
@@ -130,15 +123,16 @@ import { CountryValuesService } from '../country-values.service';
 })
 export class NavigationComponent implements OnInit {
   constructor(private countryNameService: CountryValuesService) {}
-
-  ngOnInit(): void {}
+  countries = ['Spain', 'England', 'France'];
+  ngOnInit(): void {
+    // this.countries = Array.from(countryMap.keys());
+  }
 
   setCountry(event: MatSelectChange) {
     this.countryNameService.countryValue = event.value;
     console.log(event.value);
   }
   selectedCountry = 'Spain';
-  countries = ['Spain', 'England', 'France'];
 }
 
 // <div class="dropdown">
@@ -156,3 +150,16 @@ export class NavigationComponent implements OnInit {
 //           <a href="#">Prague, Czech Republic</a>
 //         </div>
 //       </div>
+// <mat-option class="dropdowncontent" value="Spain">Spain</mat-option>
+//           <mat-option class="dropdowncontent" value="England"
+//             >England</mat-option
+//           >
+//           <mat-option class="dropdowncontent" value="France">France</mat-option>
+//           <mat-option class="dropdowncontent" value="Italy">Italy</mat-option>
+//           <mat-option class="dropdowncontent" value="Germany"
+//             >Germany</mat-option
+//           >
+//           <mat-option class="dropdowncontent" value="Switzerland"
+//             >Switzerland</mat-option
+//           >
+//           <mat-option class="dropdowncontent" value="Sweden">Sweden</mat-option>

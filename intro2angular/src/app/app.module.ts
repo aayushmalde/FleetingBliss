@@ -45,7 +45,7 @@ import { RecordsService } from './records.service';
     BrowserAnimationsModule,
     ReactiveFormsModule,
   ],
-  providers: [RecordsService, CountryValuesService],
+  providers: [RecordsService, CountryValuesService, MainpageComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
