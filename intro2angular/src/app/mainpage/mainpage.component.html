@@ -1,0 +1,15 @@
+<ng-container
+  *ngIf="{
+    countryName: countryName$ | async
+  } as observables"
+>
+  <div class="mainpage">
+    <div class="spain">
+      Country name is {{ countryName }} Country value is
+      {{ getValue(countryName) }}
+      <p>Currency: The Euro (€)</p>
+      <!-- <div class="map"></div> -->
+      <img [src]="displayedImage" width="100" height="100" />
+    </div>
+  </div>
+</ng-container>
