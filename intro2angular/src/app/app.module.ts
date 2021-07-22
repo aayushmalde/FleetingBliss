@@ -13,7 +13,8 @@ import { HeaderComponent } from './header/header.component';
 import { HeadercountryComponent } from './headercountry/headercountry.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { RecordsService } from './records.service';
+import { weatherService } from './weather.service';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RecordsService } from './records.service';
     HeaderComponent,
     MainpageComponent,
     HeadercountryComponent,
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,7 @@ import { RecordsService } from './records.service';
     BrowserAnimationsModule,
     ReactiveFormsModule,
   ],
-  providers: [RecordsService, CountryValuesService, MainpageComponent],
+  providers: [weatherService, CountryValuesService, MainpageComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

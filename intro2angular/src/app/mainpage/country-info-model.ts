@@ -7,7 +7,7 @@ export interface CountryInfo {
 let countryInfo: CountryInfo = {
   currency: 'euro',
   lattitude: 1,
-  longitude: 1,
+  longitude: 10,
   photourl: 'temp',
 };
 
