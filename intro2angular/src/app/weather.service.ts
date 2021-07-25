@@ -16,7 +16,7 @@ export class weatherService {
           COUNTRY_MAP.get('Spain')?.lattitude +
           '&lon=' +
           COUNTRY_MAP.get('Spain')?.longitude +
-          '&exclude=minutely,hourly,alerts&appid=b5485a97f56b4e545b37f8e20939c303'
+          '&exclude=minutely,hourly,alerts&units=imperial&appid=b5485a97f56b4e545b37f8e20939c303'
       )
       .pipe(retry(1), catchError(this.handleError));
   }
