@@ -1,4 +1,16 @@
-<p>The weather is currently {{ current_temp }} &deg;F</p>
-<p>The weather is currently {{ current_description }}</p>
-<p>The daily weather is {{ daily_temp }}</p>
-<p>The daily weather is {{ daily_description }}</p>
+<tr *ngFor="let temp of temp_arr; let i = index">
+  <ng-container *ngIf="i == 0; else elseBlock">
+    <div class="currentweather">
+      <p>Current Weather</p>
+      <p>{{ temp }} &deg;F</p>
+      <p>{{ desc_arr[i] }}</p>
+    </div>
+  </ng-container>
+  <ng-template #elseBlock>
+    <div class="weather">
+      <p>Day {{ i }}</p>
+      <p>{{ temp }} &deg;F</p>
+      <p>{{ desc_arr[i] }}</p>
+    </div>
+  </ng-template>
+</tr>

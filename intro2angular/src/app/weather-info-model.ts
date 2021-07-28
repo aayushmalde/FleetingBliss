@@ -13,5 +13,5 @@ export interface daily {
 
 export interface weather {
   main: any;
-  description: any;
+  description: string;
 }

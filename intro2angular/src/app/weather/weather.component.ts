@@ -10,25 +10,24 @@ import { weatherService } from '../weather.service';
 export class WeatherComponent implements OnInit {
   text = 'app';
   countryName = 'Portugal';
-  current_temp: any;
-  current_description: any;
-  daily_temp: any;
-  daily_description: any;
+
+  temp_arr: Number[] = [];
+  desc_arr: String[] = [];
+
   weatherInformation: any[] | undefined;
 
   constructor(private getWeatherService: weatherService) {}
 
   ngOnInit() {
     this.getWeatherService.getData().subscribe((data) => {
-      console.log(data.daily[0].weather);
-      this.current_temp = data.current.temp;
-      this.current_description = data.current.weather[0].description;
+      this.desc_arr?.push(data.current.weather[0].description);
+      this.temp_arr?.push(data.current.temp);
       forEach(data.daily, (value) => {
-        this.daily_temp = value.temp.day;
-        console.log(this.daily_temp);
+        console.log(value.temp.day);
+        this.temp_arr.push(value.temp.day);
+        console.log('arr', this.temp_arr);
         forEach(value.weather, (element) => {
-          this.daily_description = element.description;
-          console.log(this.daily_description);
+          this.desc_arr.push(element.description);
         });
       });
     });
