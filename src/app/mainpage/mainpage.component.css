@@ -19,6 +19,6 @@
 .map {
   height: 300px;
   width: 300px;
-  background: url(C:\Users\amsoc\OneDrive\Desktop\FleetingBliss\FleetingBliss\intro2angular\src\assets\images\horse.jpg);
+  background: url(src\assets\images\horse.jpg);
   background-size: cover;
 }
