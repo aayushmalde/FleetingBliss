@@ -9,13 +9,13 @@ import { WeatherInfo } from './weather-info-model';
 export class weatherService {
   constructor(private httpClient: HttpClient) {}
 
-  getData(): Observable<WeatherInfo> {
+  getWeatherInfoObservable(countryName: string): Observable<WeatherInfo> {
     return this.httpClient
       .get<WeatherInfo>(
         'https://api.openweathermap.org/data/2.5/onecall?lat=' +
-          COUNTRY_MAP.get('Spain')?.lattitude +
+          COUNTRY_MAP.get(countryName)?.lattitude +
           '&lon=' +
-          COUNTRY_MAP.get('Spain')?.longitude +
+          COUNTRY_MAP.get(countryName)?.longitude +
           '&exclude=minutely,hourly,alerts&units=imperial&appid=b5485a97f56b4e545b37f8e20939c303'
       )
       .pipe(retry(1), catchError(this.handleError));
