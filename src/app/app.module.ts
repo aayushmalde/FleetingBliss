@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountryNameService } from './country-name.service';
 import { HeaderComponent } from './header/header.component';
-import { HeadercountryComponent } from './headercountry/headercountry.component';
 import { MainComponent } from './main/main.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { WeatherService } from './weather.service';
@@ -22,7 +21,6 @@ import { WeatherComponent } from './weather/weather.component';
     NavigationComponent,
     HeaderComponent,
     MainComponent,
-    HeadercountryComponent,
     WeatherComponent,
   ],
   imports: [
