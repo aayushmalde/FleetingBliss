@@ -1,17 +1,17 @@
 export interface WeatherInfo {
-  daily: any;
-  current: any;
+  daily: Daily;
+  current: Current;
 }
-export interface current {
+export interface Current {
   temp: any;
   weather: any;
 }
-export interface daily {
+export interface Daily {
   temp: any;
   weather: any;
 }
 
-export interface weather {
+export interface Weather {
   main: any;
   description: string;
 }

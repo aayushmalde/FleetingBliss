@@ -23,7 +23,10 @@ export class WeatherComponent implements OnInit {
 
   weatherInformation: any[] | undefined;
 
-  constructor(private weatherService: WeatherService, private countryNameService: CountryNameService ) {}
+  constructor(
+    private weatherService: WeatherService,
+    private countryNameService: CountryNameService
+  ) {}
 
   ngOnInit() {
     this.countryName$ = this.countryNameService.getCountryValueObs().pipe(
@@ -55,5 +58,4 @@ export class WeatherComponent implements OnInit {
       })
     );
   }
-    
 }
