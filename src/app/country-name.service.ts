@@ -4,7 +4,7 @@ import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class CountryValuesService {
+export class CountryNameService {
   countryName!: string;
   countryValueObs: Subject<string> = new Subject();
 

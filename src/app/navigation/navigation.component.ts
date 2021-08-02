@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import { CountryValuesService } from '../country-values.service';
-import { COUNTRY_MAP } from '../mainpage/country-info-model';
+import { CountryNameService } from '../country-name.service';
+import { COUNTRY_MAP } from '../main/country-info-model';
 @Component({
   selector: 'app-navigation',
   template: `
@@ -77,7 +77,7 @@ import { COUNTRY_MAP } from '../mainpage/country-info-model';
   styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent implements OnInit {
-  constructor(private countryNameService: CountryValuesService) {}
+  constructor(private countryNameService: CountryNameService) {}
   europePlaces: string[] | undefined;
   asiaPlaces = ['Japan', 'South Korea', 'China', 'India', 'Singapore'];
   africaPlaces = ['Egypt', 'Tanzania', 'SouthAfrica', 'Madagascar', 'Morocco'];

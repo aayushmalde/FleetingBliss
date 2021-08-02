@@ -8,12 +8,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CountryValuesService } from './country-values.service';
+import { CountryNameService } from './country-name.service';
 import { HeaderComponent } from './header/header.component';
 import { HeadercountryComponent } from './headercountry/headercountry.component';
-import { MainpageComponent } from './mainpage/mainpage.component';
+import { MainComponent } from './main/main.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { weatherService } from './weather.service';
+import { WeatherService } from './weather.service';
 import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { WeatherComponent } from './weather/weather.component';
     AppComponent,
     NavigationComponent,
     HeaderComponent,
-    MainpageComponent,
+    MainComponent,
     HeadercountryComponent,
     WeatherComponent,
   ],
@@ -47,7 +47,7 @@ import { WeatherComponent } from './weather/weather.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
   ],
-  providers: [weatherService, CountryValuesService, MainpageComponent],
+  providers: [WeatherService, CountryNameService, MainComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

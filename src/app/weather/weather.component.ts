@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { forEach } from 'lodash';
 import { Observable } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
-import { CountryValuesService } from '../country-values.service';
+import { CountryNameService } from '../country-name.service';
 import { WeatherInfo } from '../weather-info-model';
-import { weatherService } from '../weather.service';
+import { WeatherService } from '../weather.service';
 
 @Component({
   selector: 'app-weather',
@@ -23,14 +23,14 @@ export class WeatherComponent implements OnInit {
 
   weatherInformation: any[] | undefined;
 
-  constructor(private getWeatherService: weatherService, private countryNameService: CountryValuesService ) {}
+  constructor(private weatherService: WeatherService, private countryNameService: CountryNameService ) {}
 
   ngOnInit() {
     this.countryName$ = this.countryNameService.getCountryValueObs().pipe(
       tap((countryName) => {
         this.countryName = countryName;
 
-        this.weatherInfo$ = this.getWeatherService
+        this.weatherInfo$ = this.weatherService
           .getWeatherInfoObservable(this.countryName)
           .pipe(
             take(1),

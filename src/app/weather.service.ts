@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { COUNTRY_MAP } from './mainpage/country-info-model';
+import { COUNTRY_MAP } from './main/country-info-model';
 import { WeatherInfo } from './weather-info-model';
 
 @Injectable()
-export class weatherService {
+export class WeatherService {
   constructor(private httpClient: HttpClient) {}
 
   getWeatherInfoObservable(countryName: string): Observable<WeatherInfo> {
