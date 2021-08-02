@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { CountryInfo, COUNTRY_MAP } from './country-info-model';
-import { CountryNameService } from '../country-name.service';
+import { CountryNameService } from '../services/country-name.service';
 
 export interface lodgingInfo {
   name: string;
@@ -28,12 +28,6 @@ export class MainComponent implements OnInit {
   countryName$: Observable<string> | undefined; // convention to use $ at end for observables
   displayedImage = 'assets/images/horse.jpg';
 
-  countryInfo: CountryInfo = {
-    currency: 'euro',
-    lattitude: 100,
-    longitude: 100,
-    photourl: 'temp',
-  };
 
   constructor(private countryNameService: CountryNameService) {}
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import { CountryNameService } from '../country-name.service';
 import { COUNTRY_MAP } from '../main/country-info-model';
+import { CountryNameService } from '../services/country-name.service';
 @Component({
   selector: 'app-navigation',
   template: `

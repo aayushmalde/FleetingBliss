@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { forEach } from 'lodash';
 import { Observable } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
-import { CountryNameService } from '../country-name.service';
+import { CountryNameService } from '../services/country-name.service';
+import { WeatherService } from '../services/weather.service';
 import { WeatherInfo } from '../weather-info-model';
-import { WeatherService } from '../weather.service';
 
 @Component({
   selector: 'app-weather',
