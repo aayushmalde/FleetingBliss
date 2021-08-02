@@ -8,12 +8,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { MainComponent } from './main/main.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MainComponent } from './components/main/main.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 import { CountryNameService } from './services/country-name.service';
 import { WeatherService } from './services/weather.service';
-import { WeatherComponent } from './weather/weather.component';
+import { WeatherComponent } from './components/weather/weather.component';
 
 @NgModule({
   declarations: [

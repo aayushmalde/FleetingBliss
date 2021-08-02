@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { COUNTRY_MAP } from '../models/country-info-model';
-import { CountryNameService } from '../services/country-name.service';
+import { COUNTRY_MAP } from '../../models/country-info-model';
+import { CountryNameService } from '../../services/country-name.service';
 
 export interface lodgingInfo {
   name: string;
