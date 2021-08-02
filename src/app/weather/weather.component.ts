@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
 import { CountryNameService } from '../services/country-name.service';
 import { WeatherService } from '../services/weather.service';
-import { WeatherInfo } from '../weather-info-model';
+import { WeatherInfo } from '../models/weather-info-model';
 
 @Component({
   selector: 'app-weather',
