@@ -11,9 +11,7 @@ import { CountryNameService } from '../../services/country-name.service';
 })
 export class MainComponent implements OnInit {
   countryName: string = '';
-  countryValue1: string = '';
   countryName$: Observable<string> | undefined;
-  displayedImage = 'assets/images/horse.jpg';
 
   constructor(private countryNameService: CountryNameService) {}
 

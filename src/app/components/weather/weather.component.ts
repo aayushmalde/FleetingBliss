@@ -12,12 +12,10 @@ import { WeatherInfo } from '../../models/weather-info-model';
   styleUrls: ['./weather.component.css'],
 })
 export class WeatherComponent implements OnInit {
-  text = '';
   countryName = '';
   countryName$: Observable<string> | undefined;
   weatherInfo!: WeatherInfo;
   weatherInfo$: Observable<WeatherInfo> | undefined;
-
   temperatures: number[] = [];
   descriptions: string[] = [];
 

@@ -35,7 +35,6 @@ export class WeatherService {
       // Get server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    //test
     window.alert(errorMessage);
     return throwError(errorMessage);
   }

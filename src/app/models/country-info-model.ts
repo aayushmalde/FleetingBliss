@@ -23,7 +23,6 @@ let franceInfo: CountryInfo = {
   photourl: 'temp',
 };
 
-//in future have Object called countries with values, so that way using the map in the html we can say map.get(countryName).currency
 export const COUNTRY_MAP: Map<string, CountryInfo> = new Map([
   ['Spain', spainInfo],
   ['England', englandInfo],

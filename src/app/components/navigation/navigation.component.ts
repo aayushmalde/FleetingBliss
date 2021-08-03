@@ -115,5 +115,4 @@ export class NavigationComponent implements OnInit {
     this.countryNameService.countryValue = event.value;
     console.log(event.value);
   }
-  selectedCountry = 'Spain';
 }
