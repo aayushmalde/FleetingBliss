@@ -12,14 +12,14 @@ import { WeatherInfo } from '../../models/weather-info-model';
   styleUrls: ['./weather.component.css'],
 })
 export class WeatherComponent implements OnInit {
-  text = 'app';
-  countryName = 'Spain';
+  text = '';
+  countryName = '';
   countryName$: Observable<string> | undefined; // convention to use $ at end for observables
   weatherInfo!: WeatherInfo;
   weatherInfo$: Observable<WeatherInfo> | undefined; // convention to use $ at end for observables
 
-  temp_arr: Number[] = [];
-  desc_arr: String[] = [];
+  temperatures: Number[] = [];
+  descriptions: String[] = [];
 
   weatherInformation: any[] | undefined;
 
@@ -39,18 +39,18 @@ export class WeatherComponent implements OnInit {
             take(1),
             tap((weatherInfo) => {
               this.weatherInfo = weatherInfo;
-              this.desc_arr = [];
-              this.temp_arr = [];
-              this.desc_arr?.push(
+              this.descriptions = [];
+              this.temperatures = [];
+              this.descriptions.push(
                 this.weatherInfo.current.weather[0].description
               );
-              this.temp_arr?.push(this.weatherInfo.current.temp);
+              this.temperatures?.push(this.weatherInfo.current.temp);
               forEach(this.weatherInfo.daily, (value) => {
                 console.log(value.temp.day);
-                this.temp_arr.push(value.temp.day);
-                console.log('arr', this.temp_arr);
+                this.temperatures.push(value.temp.day);
+                console.log('arr', this.temperatures);
                 forEach(value.weather, (element) => {
-                  this.desc_arr.push(element.description);
+                  this.descriptions.push(element.description);
                 });
               });
             })

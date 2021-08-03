@@ -4,19 +4,6 @@ import { tap } from 'rxjs/operators';
 import { COUNTRY_MAP } from '../../models/country-info-model';
 import { CountryNameService } from '../../services/country-name.service';
 
-export interface lodgingInfo {
-  name: string;
-  numOfPeople: number;
-  cost: number;
-  duration: number;
-}
-
-export interface activityInfo {
-  name: string;
-  numOfPeople: number;
-  cost: number;
-}
-
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -25,9 +12,8 @@ export interface activityInfo {
 export class MainComponent implements OnInit {
   countryName: string = '';
   countryValue1: string = '';
-  countryName$: Observable<string> | undefined; // convention to use $ at end for observables
+  countryName$: Observable<string> | undefined;
   displayedImage = 'assets/images/horse.jpg';
-
 
   constructor(private countryNameService: CountryNameService) {}
 
