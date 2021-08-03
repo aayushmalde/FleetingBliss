@@ -15,10 +15,3 @@
 .spain {
   background-color: lightpink;
 }
-
-.map {
-  height: 300px;
-  width: 300px;
-  background: url(src\assets\images\horse.jpg);
-  background-size: cover;
-}

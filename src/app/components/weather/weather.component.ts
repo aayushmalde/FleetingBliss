@@ -14,12 +14,12 @@ import { WeatherInfo } from '../../models/weather-info-model';
 export class WeatherComponent implements OnInit {
   text = '';
   countryName = '';
-  countryName$: Observable<string> | undefined; // convention to use $ at end for observables
+  countryName$: Observable<string> | undefined;
   weatherInfo!: WeatherInfo;
-  weatherInfo$: Observable<WeatherInfo> | undefined; // convention to use $ at end for observables
+  weatherInfo$: Observable<WeatherInfo> | undefined;
 
-  temperatures: Number[] = [];
-  descriptions: String[] = [];
+  temperatures: number[] = [];
+  descriptions: string[] = [];
 
   weatherInformation: any[] | undefined;
 
