@@ -44,9 +44,7 @@ export class WeatherComponent implements OnInit {
               );
               this.temperatures?.push(this.weatherInfo.current.temp);
               forEach(this.weatherInfo.daily, (value) => {
-                console.log(value.temp.day);
                 this.temperatures.push(value.temp.day);
-                console.log('arr', this.temperatures);
                 forEach(value.weather, (element) => {
                   this.descriptions.push(element.description);
                 });

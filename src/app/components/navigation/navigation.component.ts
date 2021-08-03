@@ -70,6 +70,5 @@ export class NavigationComponent implements OnInit {
 
   setCountry(event: MatSelectChange) {
     this.countryNameService.countryValue = event.value;
-    console.log(event.value);
   }
 }
