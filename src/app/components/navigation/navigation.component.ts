@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import { COUNTRY_MAP } from '../../models/country-info-model';
+import {
+  ASIA_COUNTRY_MAP,
+  EUROPE_COUNTRY_MAP,
+} from '../../models/country-info-model';
 import { CountryNameService } from '../../services/country-name.service';
 @Component({
   selector: 'app-navigation',
@@ -40,28 +43,6 @@ import { CountryNameService } from '../../services/country-name.service';
         </mat-select>
       </mat-form-field>
       <mat-form-field class="dropbtn">
-        <mat-label class="label">Popular in USA</mat-label>
-        <mat-select class="select" (selectionChange)="setCountry($event)">
-          <mat-option
-            class="dropdowncontent"
-            *ngFor="let country of usaPlaces"
-            [value]="country"
-            >{{ country }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field class="dropbtn">
-        <mat-label class="label">Natural Wonders</mat-label>
-        <mat-select class="select" (selectionChange)="setCountry($event)">
-          <mat-option
-            class="dropdowncontent"
-            *ngFor="let country of naturePlaces"
-            [value]="country"
-            >{{ country }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field class="dropbtn">
         <mat-label class="label">Best Beaches</mat-label>
         <mat-select class="select" (selectionChange)="setCountry($event)">
           <mat-option
@@ -79,36 +60,12 @@ import { CountryNameService } from '../../services/country-name.service';
 export class NavigationComponent implements OnInit {
   constructor(private countryNameService: CountryNameService) {}
   europePlaces: string[] | undefined;
-  asiaPlaces = ['Japan', 'South Korea', 'China', 'India', 'Singapore'];
+  asiaPlaces: string[] | undefined;
   africaPlaces = ['Egypt', 'Tanzania', 'SouthAfrica', 'Madagascar', 'Morocco'];
-  usaPlaces = [
-    'New York',
-    'California',
-    'Washington D.C.',
-    'Las Vegas, Nevada',
-    'New Orleans,Louisianna',
-    'Alaska',
-  ];
-  naturePlaces = [
-    'Great Barrier Reef, Australia',
-    'Yellowstone National Park',
-    'Mt. Everest, Nepal',
-    'Grand Canyon,Arizona',
-    'Niagra Falls, Canada',
-    'Northern Lights, Norway',
-  ];
-  beachPlaces = [
-    'Fiji',
-    'Bora Bora',
-    'Maldives',
-    'Tahiti',
-    'Maui',
-    'Cancun',
-    'Bahamas',
-    'Amalfi Coast',
-  ];
+  beachPlaces = ['Fiji', 'Bora Bora', 'Maldives', 'Mexico', 'Bahamas'];
   ngOnInit(): void {
-    this.europePlaces = Array.from(COUNTRY_MAP.keys());
+    this.europePlaces = Array.from(EUROPE_COUNTRY_MAP.keys());
+    this.asiaPlaces = Array.from(ASIA_COUNTRY_MAP.keys());
   }
 
   setCountry(event: MatSelectChange) {

@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { forEach } from 'lodash';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { COUNTRY_MAP } from '../../models/country-info-model';
+import {
+  EUROPE_COUNTRY_MAP,
+  ASIA_COUNTRY_MAP,
+  countries,
+  CountryInfo,
+} from '../../models/country-info-model';
 import { CountryNameService } from '../../services/country-name.service';
 
 @Component({
@@ -24,6 +30,9 @@ export class MainComponent implements OnInit {
   }
 
   getValue(countryName: string) {
-    return COUNTRY_MAP.get(countryName)?.currency;
+    if (ASIA_COUNTRY_MAP.has(countryName)) {
+      return ASIA_COUNTRY_MAP.get(countryName)?.currency;
+    }
+    return EUROPE_COUNTRY_MAP.get(countryName)?.currency;
   }
 }
