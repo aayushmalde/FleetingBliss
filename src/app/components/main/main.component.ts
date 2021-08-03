@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
     );
   }
 
-  getValue(countryName: string) {
+  getCurrency(countryName: string) {
     if (ASIA_COUNTRY_MAP.has(countryName)) {
       return ASIA_COUNTRY_MAP.get(countryName)?.currency;
     }

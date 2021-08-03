@@ -8,7 +8,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { CountryNameService } from './services/country-name.service';
@@ -19,7 +18,6 @@ import { WeatherComponent } from './components/weather/weather.component';
   declarations: [
     AppComponent,
     NavigationComponent,
-    HeaderComponent,
     MainComponent,
     WeatherComponent,
   ],
