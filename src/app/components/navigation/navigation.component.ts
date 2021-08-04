@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import {
-  ASIA_COUNTRY_MAP,
-  EUROPE_COUNTRY_MAP,
-} from '../../models/country-info-model';
+import { CountryInfo, COUNTRY_MAP } from '../../models/country-info-model';
 import { CountryNameService } from '../../services/country-name.service';
+import { filter, forEach } from 'lodash';
+
 @Component({
   selector: 'app-navigation',
   template: `
@@ -64,16 +63,29 @@ import { CountryNameService } from '../../services/country-name.service';
 })
 export class NavigationComponent implements OnInit {
   constructor(private countryNameService: CountryNameService) {}
-  europePlaces: string[] | undefined;
-  asiaPlaces: string[] | undefined;
-  africaPlaces = ['Egypt', 'Tanzania', 'SouthAfrica', 'Madagascar', 'Morocco'];
-  beachPlaces = ['Fiji', 'Bora Bora', 'Maldives', 'Mexico', 'Bahamas'];
+  europePlaces: string[] = [];
+  asiaPlaces: string[] = [];
+  africaPlaces: string[] = [];
+  beachPlaces: string[] = [];
+
   ngOnInit(): void {
-    this.europePlaces = Array.from(EUROPE_COUNTRY_MAP.keys());
-    this.asiaPlaces = Array.from(ASIA_COUNTRY_MAP.keys());
+    this.europePlaces = this.getPlaceNames('europe');
+    this.asiaPlaces = this.getPlaceNames('asia');
+    this.africaPlaces = this.getPlaceNames('africa');
+    this.beachPlaces = this.getPlaceNames('beach');
   }
 
   setCountry(event: MatSelectChange) {
     this.countryNameService.countryValue = event.value;
+  }
+
+  getPlaceNames(continent: string) {
+    let ret: string[] = [];
+    COUNTRY_MAP.forEach((value: CountryInfo, key: string) => {
+      if (value.place == continent) {
+        ret.push(key);
+      }
+    });
+    return ret;
   }
 }
