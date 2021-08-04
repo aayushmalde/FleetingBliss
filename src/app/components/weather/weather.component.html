@@ -1,0 +1,23 @@
+<ng-container
+  *ngIf="{
+    countryName: countryName$ | async,
+    weatherInfo: weatherInfo$ | async
+  } as observables"
+>
+  <tr *ngFor="let temp of temperatures; let i = index">
+    <ng-container *ngIf="i == 0; else elseBlock">
+      <div class="currentweather">
+        <p>Current Weather</p>
+        <p>{{ temp }} &deg;F</p>
+        <p>{{ descriptions[i] }}</p>
+      </div>
+    </ng-container>
+    <ng-template #elseBlock>
+      <div class="weather">
+        <p>Day {{ i }}</p>
+        <p>{{ temp }} &deg;F</p>
+        <p>{{ descriptions[i] }}</p>
+      </div>
+    </ng-template>
+  </tr>
+</ng-container>

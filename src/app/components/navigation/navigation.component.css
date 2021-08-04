@@ -1,0 +1,111 @@
+.header {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 8px outset lightskyblue;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.websitename {
+  margin: 4px 8px;
+  color: darkblue;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.description {
+  margin: 4px 8px;
+  color: rgb(50, 77, 104);
+  font-size: 20px;
+}
+
+.navigationbar {
+  background-color: rgb(245, 216, 245);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  border: 4px outset plum;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: 4px;
+  column-gap: 10px;
+}
+
+.dropbtn {
+  background-color: rgb(231, 163, 231);
+  border: 2px solid purple;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 150px;
+  height: 50px;
+  margin: 2px 5px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  z-index: 1;
+  width: 150px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  background-color: rgb(231, 163, 231);
+  border: 2px solid purple;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: rgb(176, 161, 230);
+  border: 2px solid purple;
+  border-radius: 4px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: rgb(176, 161, 230);
+  border: 2px solid purple;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 15px;
+  color: rgb(41, 34, 41);
+}
+
+.dropdowncontent {
+  background-color: rgb(231, 163, 231);
+  border: 2px solid purple;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+.dropdowncontent:hover {
+  background-color: rgb(176, 161, 230);
+  border: 2px solid purple;
+  border-radius: 4px;
+  font-weight: bold;
+}

@@ -1,0 +1,9 @@
+.weather {
+  margin: 5px;
+}
+
+.currentweather {
+  margin: 5px;
+  padding: 2px;
+  border: 2px solid black;
+}
