@@ -69,17 +69,17 @@ export class NavigationComponent implements OnInit {
   beachContinent: string[] = [];
 
   ngOnInit(): void {
-    this.europeContinent = this.getCountriesforContinent('europe');
-    this.asiaContinent = this.getCountriesforContinent('asia');
-    this.africaContinent = this.getCountriesforContinent('africa');
-    this.beachContinent = this.getCountriesforContinent('beach');
+    this.europeContinent = this.getCountryNamesforContinent('europe');
+    this.asiaContinent = this.getCountryNamesforContinent('asia');
+    this.africaContinent = this.getCountryNamesforContinent('africa');
+    this.beachContinent = this.getCountryNamesforContinent('beach');
   }
 
   setCountry(event: MatSelectChange) {
     this.countryNameService.countryValue = event.value;
   }
 
-  getCountriesforContinent(continent: string) {
+  getCountryNamesforContinent(continent: string) {
     let countryNames: string[] = [];
     COUNTRY_MAP.forEach((value: CountryInfo, key: string) => {
       if (value.place == continent) {
