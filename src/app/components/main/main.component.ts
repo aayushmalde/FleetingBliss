@@ -27,4 +27,6 @@ export class MainComponent implements OnInit {
   getCurrency(countryName: string) {
     return COUNTRY_MAP.get(countryName)?.currency;
   }
+
+  //readMe - learned angular, give description, mention API, etc.
 }

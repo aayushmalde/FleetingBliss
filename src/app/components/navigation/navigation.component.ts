@@ -18,7 +18,7 @@ import { filter, forEach } from 'lodash';
         <mat-select class="select" (selectionChange)="setCountry($event)">
           <mat-option
             class="dropdowncontent"
-            *ngFor="let country of europePlaces"
+            *ngFor="let country of europeContinent"
             [value]="country"
             >{{ country }}</mat-option
           >
@@ -29,7 +29,7 @@ import { filter, forEach } from 'lodash';
         <mat-select class="select" (selectionChange)="setCountry($event)">
           <mat-option
             class="dropdowncontent"
-            *ngFor="let country of asiaPlaces"
+            *ngFor="let country of asiaContinent"
             [value]="country"
             >{{ country }}</mat-option
           >
@@ -40,7 +40,7 @@ import { filter, forEach } from 'lodash';
         <mat-select class="select" (selectionChange)="setCountry($event)">
           <mat-option
             class="dropdowncontent"
-            *ngFor="let country of africaPlaces"
+            *ngFor="let country of africaContinent"
             [value]="country"
             >{{ country }}</mat-option
           >
@@ -51,7 +51,7 @@ import { filter, forEach } from 'lodash';
         <mat-select class="select" (selectionChange)="setCountry($event)">
           <mat-option
             class="dropdowncontent"
-            *ngFor="let country of beachPlaces"
+            *ngFor="let country of beachContinent"
             [value]="country"
             >{{ country }}</mat-option
           >
@@ -63,29 +63,29 @@ import { filter, forEach } from 'lodash';
 })
 export class NavigationComponent implements OnInit {
   constructor(private countryNameService: CountryNameService) {}
-  europePlaces: string[] = [];
-  asiaPlaces: string[] = [];
-  africaPlaces: string[] = [];
-  beachPlaces: string[] = [];
+  europeContinent: string[] = [];
+  asiaContinent: string[] = [];
+  africaContinent: string[] = [];
+  beachContinent: string[] = [];
 
   ngOnInit(): void {
-    this.europePlaces = this.getPlaceNames('europe');
-    this.asiaPlaces = this.getPlaceNames('asia');
-    this.africaPlaces = this.getPlaceNames('africa');
-    this.beachPlaces = this.getPlaceNames('beach');
+    this.europeContinent = this.getCountriesforContinent('europe');
+    this.asiaContinent = this.getCountriesforContinent('asia');
+    this.africaContinent = this.getCountriesforContinent('africa');
+    this.beachContinent = this.getCountriesforContinent('beach');
   }
 
   setCountry(event: MatSelectChange) {
     this.countryNameService.countryValue = event.value;
   }
 
-  getPlaceNames(continent: string) {
-    let ret: string[] = [];
+  getCountriesforContinent(continent: string) {
+    let countryNames: string[] = [];
     COUNTRY_MAP.forEach((value: CountryInfo, key: string) => {
       if (value.place == continent) {
-        ret.push(key);
+        countryNames.push(key);
       }
     });
-    return ret;
+    return countryNames;
   }
 }
