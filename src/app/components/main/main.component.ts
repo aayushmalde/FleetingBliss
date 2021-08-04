@@ -17,7 +17,7 @@ export class MainComponent implements OnInit {
   constructor(private countryNameService: CountryNameService) {}
 
   ngOnInit() {
-    this.countryName$ = this.countryNameService.getCountryValueObs().pipe(
+    this.countryName$ = this.countryNameService.getCountryNameObs().pipe(
       tap((countryName) => {
         this.countryName = countryName;
       })

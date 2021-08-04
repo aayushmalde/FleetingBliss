@@ -27,7 +27,7 @@ export class WeatherComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.countryName$ = this.countryNameService.getCountryValueObs().pipe(
+    this.countryName$ = this.countryNameService.getCountryNameObs().pipe(
       tap((countryName) => {
         this.countryName = countryName;
 

@@ -6,16 +6,16 @@ import { Observable, Subject } from 'rxjs';
 })
 export class CountryNameService {
   countryName!: string;
-  countryValueObs: Subject<string> = new Subject();
+  countryNameObs: Subject<string> = new Subject();
 
   constructor() {}
 
   set countryValue(val: string) {
     this.countryName = val;
-    this.countryValueObs.next(this.countryName);
+    this.countryNameObs.next(this.countryName);
   }
 
-  getCountryValueObs(): Observable<string> {
-    return this.countryValueObs;
+  getCountryNameObs(): Observable<string> {
+    return this.countryNameObs;
   }
 }
