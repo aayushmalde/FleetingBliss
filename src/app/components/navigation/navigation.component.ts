@@ -69,7 +69,7 @@ export class NavigationComponent implements OnInit {
   getCountryNamesforContinent(continent: string) {
     let countryNames: string[] = [];
     COUNTRY_MAP.forEach((value: CountryInfo, key: string) => {
-      if (value.place == continent) {
+      if (value.country == continent) {
         countryNames.push(key);
       }
     });
