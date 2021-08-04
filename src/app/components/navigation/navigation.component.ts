@@ -46,17 +46,6 @@ import { filter, forEach } from 'lodash';
           >
         </mat-select>
       </mat-form-field>
-      <mat-form-field class="dropbtn">
-        <mat-label class="label">Best Beaches</mat-label>
-        <mat-select class="select" (selectionChange)="setCountry($event)">
-          <mat-option
-            class="dropdowncontent"
-            *ngFor="let country of beachContinent"
-            [value]="country"
-            >{{ country }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
     </div>
   `,
   styleUrls: ['./navigation.component.css'],
@@ -66,13 +55,11 @@ export class NavigationComponent implements OnInit {
   europeContinent: string[] = [];
   asiaContinent: string[] = [];
   africaContinent: string[] = [];
-  beachContinent: string[] = [];
 
   ngOnInit(): void {
     this.europeContinent = this.getCountryNamesforContinent('europe');
     this.asiaContinent = this.getCountryNamesforContinent('asia');
     this.africaContinent = this.getCountryNamesforContinent('africa');
-    this.beachContinent = this.getCountryNamesforContinent('beach');
   }
 
   setCountry(event: MatSelectChange) {

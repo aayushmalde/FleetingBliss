@@ -7,13 +7,13 @@ export interface CountryInfo {
 let spainInfo: CountryInfo = {
   currency: 'euro',
   lattitude: 40.46,
-  longitude: 3.75,
+  longitude: -3.75,
   place: 'europe',
 };
 let englandInfo: CountryInfo = {
   currency: 'euro',
   lattitude: 52.35,
-  longitude: 1.17,
+  longitude: -1.17,
   place: 'europe',
 };
 let franceInfo: CountryInfo = {
@@ -65,6 +65,36 @@ let singaporeInfo: CountryInfo = {
   longitude: 103.82,
   place: 'asia',
 };
+let tanzaniaInfo: CountryInfo = {
+  currency: 'tzs',
+  lattitude: -6.37,
+  longitude: 34.89,
+  place: 'africa',
+};
+let egyptInfo: CountryInfo = {
+  currency: 'egp',
+  lattitude: 26.82,
+  longitude: 30.8,
+  place: 'africa',
+};
+let madagascarInfo: CountryInfo = {
+  currency: 'mga',
+  lattitude: -18.77,
+  longitude: 46.87,
+  place: 'africa',
+};
+let ethiopiaInfo: CountryInfo = {
+  currency: 'etb',
+  lattitude: 9.15,
+  longitude: 40.49,
+  place: 'africa',
+};
+let southAfricaInfo: CountryInfo = {
+  currency: 'rand',
+  lattitude: -30.56,
+  longitude: 22.94,
+  place: 'africa',
+};
 
 export const COUNTRY_MAP: Map<string, CountryInfo> = new Map([
   ['Spain', spainInfo],
@@ -77,4 +107,9 @@ export const COUNTRY_MAP: Map<string, CountryInfo> = new Map([
   ['China', chinaInfo],
   ['India', indiaInfo],
   ['Singapore', singaporeInfo],
+  ['Tanzania', tanzaniaInfo],
+  ['Egypt', egyptInfo],
+  ['Madagascar', madagascarInfo],
+  ['Ethiopia', ethiopiaInfo],
+  ['South Africa', southAfricaInfo],
 ]);
