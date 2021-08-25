@@ -1,7 +1,5 @@
-
 html {
-  background: url(src\assets\images\background.jpeg)
-    no-repeat center center fixed;
+  background-color: rgb(250, 225, 237);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -16,6 +14,3 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

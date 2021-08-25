@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { forEach } from 'lodash';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { COUNTRY_MAP, CountryInfo } from '../../models/country-info-model';
+import { COUNTRY_MAP } from '../../models/country-info-model';
 import { CountryNameService } from '../../services/country-name.service';
 
 @Component({

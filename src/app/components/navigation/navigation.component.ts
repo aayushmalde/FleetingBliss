@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 import { CountryInfo, COUNTRY_MAP } from '../../models/country-info-model';
 import { CountryNameService } from '../../services/country-name.service';
-import { filter, forEach } from 'lodash';
 
 @Component({
   selector: 'app-navigation',

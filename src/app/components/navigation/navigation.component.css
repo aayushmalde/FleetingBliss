@@ -30,7 +30,8 @@
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: center;
-  border: 4px outset plum;
+  border: outset plum;
+  border-width: 0px 3px 5px 3px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   margin-top: 4px;
