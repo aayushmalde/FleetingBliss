@@ -1,18 +1,15 @@
 .header {
-  background-color: lightblue;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  border: 8px outset lightskyblue;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-bottom: 5px solid rgb(255, 255, 255);
 }
 
 .websitename {
   margin: 4px 8px;
-  color: darkblue;
+  color: plum;
   font-size: 30px;
   font-weight: 700;
 }
@@ -24,23 +21,18 @@
 }
 
 .navigationbar {
-  background-color: rgb(245, 216, 245);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: center;
-  border: outset plum;
-  border-width: 0px 3px 5px 3px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   margin-top: 4px;
   column-gap: 10px;
 }
 
 .dropbtn {
   background-color: rgb(231, 163, 231);
-  border: 2px solid purple;
+  border-bottom: 2px solid purple;
   border-radius: 6px;
   font-size: 15px;
   width: 150px;

@@ -9,41 +9,42 @@ import { CountryNameService } from '../../services/country-name.service';
     <div class="header">
       <div class="websitename">Fleeting Bliss</div>
       <div class="description">Choose a country to see the weather</div>
-    </div>
-    <div class="navigationbar">
-      <mat-form-field class="dropbtn">
-        <mat-label class="label">Popular in Europe</mat-label>
-        <mat-select class="select" (selectionChange)="setCountry($event)">
-          <mat-option
-            class="dropdowncontent"
-            *ngFor="let country of europeContinent"
-            [value]="country"
-            >{{ country }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field class="dropbtn">
-        <mat-label class="label">Popular in Asia</mat-label>
-        <mat-select class="select" (selectionChange)="setCountry($event)">
-          <mat-option
-            class="dropdowncontent"
-            *ngFor="let country of asiaContinent"
-            [value]="country"
-            >{{ country }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field class="dropbtn">
-        <mat-label class="label">Popular in Africa</mat-label>
-        <mat-select class="select" (selectionChange)="setCountry($event)">
-          <mat-option
-            class="dropdowncontent"
-            *ngFor="let country of africaContinent"
-            [value]="country"
-            >{{ country }}</mat-option
-          >
-        </mat-select>
-      </mat-form-field>
+
+      <div class="navigationbar">
+        <mat-form-field class="dropbtn">
+          <mat-label class="label">Popular in Europe</mat-label>
+          <mat-select class="select" (selectionChange)="setCountry($event)">
+            <mat-option
+              class="dropdowncontent"
+              *ngFor="let country of europeContinent"
+              [value]="country"
+              >{{ country }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="dropbtn">
+          <mat-label class="label">Popular in Asia</mat-label>
+          <mat-select class="select" (selectionChange)="setCountry($event)">
+            <mat-option
+              class="dropdowncontent"
+              *ngFor="let country of asiaContinent"
+              [value]="country"
+              >{{ country }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="dropbtn">
+          <mat-label class="label">Popular in Africa</mat-label>
+          <mat-select class="select" (selectionChange)="setCountry($event)">
+            <mat-option
+              class="dropdowncontent"
+              *ngFor="let country of africaContinent"
+              [value]="country"
+              >{{ country }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
     </div>
   `,
   styleUrls: ['./navigation.component.css'],
