@@ -31,9 +31,6 @@
 }
 
 .dropbtn {
-  background-color: rgb(231, 163, 231);
-  border-bottom: 2px solid purple;
-  border-radius: 6px;
   font-size: 15px;
   width: 150px;
   height: 50px;
@@ -86,7 +83,15 @@
 
 .label {
   font-size: 15px;
-  color: rgb(41, 34, 41);
+  color: plum;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-select-value {
+  color: plum;
 }
 
 .dropdowncontent {
