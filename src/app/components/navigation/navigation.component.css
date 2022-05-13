@@ -94,6 +94,10 @@
   color: plum;
 }
 
+::ng-deep .mat-select-arrow {
+  display: none;
+}
+
 .dropdowncontent {
   background-color: rgb(231, 163, 231);
   border: 2px solid purple;
