@@ -1,9 +1,13 @@
 .header {
-  display: flex;
+  display: grid;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: rgb(44, 35, 48);
+  border: 10px solid purple;
 }
 
 .websitename {
@@ -15,7 +19,7 @@
 
 .description {
   margin: 4px 8px;
-  color: rgb(50, 77, 104);
+  color: #66fcf1;
   font-size: 20px;
 }
 
@@ -27,6 +31,7 @@
   justify-content: center;
   margin-top: 4px;
   column-gap: 10px;
+  background-color: rgb(44, 35, 48);
 }
 
 .dropbtn {

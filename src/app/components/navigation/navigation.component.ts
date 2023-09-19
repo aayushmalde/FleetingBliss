@@ -8,8 +8,8 @@ import { filter, forEach } from 'lodash';
   selector: 'app-navigation',
   template: `
     <div class="header">
-      <div class="websitename">Escape Room</div>
-      <div class="description">Choose a level to start</div>
+      <div class="websitename">Fleeting Bliss</div>
+      <div class="description">Choose a country to see the weather</div>
     </div>
     <div class="navigationbar">
       <mat-form-field class="dropbtn">
